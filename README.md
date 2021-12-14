@@ -1,16 +1,29 @@
-# Hodor
-  一个C#编写的webDav文件共享Windows程序
+# WinLoL
+  一个C#编写明华 CS-230Z-YKT程序.
 
-## 名字
-  这个名字来自《权利的游戏》Hodor。这是向权游的致敬。
+
 ## 使用说明
-###  1.启动服务端
-  点击菜单中的启动服务，即可启动文件服务。
-
-### 2.连接共享
-  在程序下方输入IP地址，连接共享并映射为盘符。可以选择一个未使用的盘符。
-
-  （注意：如果管理员提升权限运行此程序，当前用户将看不到盘符。这是由于windows系统底层决定的。）
+###  1.编译成功之后
 
 
+
+客户端代码:
+
+```js
+            if ("WebSocket" in window) {
+                // init the websocket client
+                wsc = new WebSocket("ws://localhost:5050/Love");
+                wsc.onopen = function() {
+                    console.log("connected");
+                };
+                wsc.onclose = function() {
+                    console.log("closed");
+                };
+                wsc.onmessage = function(e) {
+                    //var data = JSON.parse(e.data);
+                    console.log(e.data);
+                    $("#c-card_no").val(e.data);
+                };
+            }
+```
 
